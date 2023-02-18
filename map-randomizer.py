@@ -18,7 +18,7 @@ i=0
 while (wiersze[i].find("Version:") == -1):
     i+=1
 
-wiersze[i] = wiersze[i][:-2] + " - randomized by " + str(change) + "\n"
+wiersze[i] = wiersze[i][:-1] + " - randomized by " + str(change) + "\n"
 
 # separate the hitobject rows
 while (wiersze[i].find("[HitObjects]") == -1):
