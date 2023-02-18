@@ -1,8 +1,9 @@
 import glob, random
 
+diffname = input("diffname query: ")
 change = int(input("change how much?: "))
 
-path = glob.glob('*.osu')[0]
+path = glob.glob(('*'+diffname+'*.osu'))[0]
 path2 = path[:-5] + " - randomized by " + str(change) + "].osu"
 print("input path: " + path)
 print("output path: " + path2)
