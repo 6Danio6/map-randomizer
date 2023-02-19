@@ -10,7 +10,7 @@ path2 = path[:-5] + " - randomized by " + str(change) + "].osu"
 print("input path: " + path)
 print("output path: " + path2)
 
-f = open(path,'r+')
+f = open(path, errors="ignore")
 f2 = open(path2,'a')
 
 wiersze = f.readlines()
