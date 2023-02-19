@@ -5,7 +5,7 @@ import glob, random
 diff = input("diff query: ")
 change = int(input("change how much?: "))
 
-path = glob.glob(('*'+diff+'*.osu'))[0]
+path = glob.glob(('*'+diff+'*.osu'))[-1]
 path2 = path[:-5] + " - randomized by " + str(change) + "].osu"
 print("input path: " + path)
 print("output path: " + path2)
