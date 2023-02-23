@@ -1,8 +1,11 @@
 # put this file in the desired song folder and run it
+# type 1 - change the x and y values by a random number
+# type 2 - move at a random angle by the given distance (not sure if it works)
 
-import glob, random
+import glob, random, math
 
-diff = input("diff query: ")
+randomtype = input("type (1 or 2): ")
+diff = input("diff: ")
 change = int(input("change how much?: "))
 
 path = glob.glob(('*'+diff+'*.osu'))[-1]
@@ -41,8 +44,12 @@ for wiersz in hitobjects:
     x = int(wiersz[0 : comma1])
     y = int(wiersz[comma1+1 : comma2])
 
-    x += random.randint(-change,change)
-    y += random.randint(-change,change)
+    if (randomtype == 1):
+        x += random.randint(-change,change)
+        y += random.randint(-change,change)
+    else:
+        x += math.cos( random.randint(0,359) ) * change
+        y += math.sin( random.randint(0,359) ) * change
 
     nowywiersz = str(x) + "," + str(y) + wiersz[comma2:]
     f2.write(nowywiersz)
