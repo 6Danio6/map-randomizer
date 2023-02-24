@@ -9,7 +9,7 @@ diff = input("diff: ")
 change = int(input("change how much?: "))
 
 path = glob.glob(('*'+diff+'*.osu'))[-1]
-path2 = path[:-5] + " - randomized by " + str(change) + "].osu"
+path2 = path[:-5] + " | random: " + str(change) + " type: " + randomtype + "].osu"
 print("input path: " + path)
 print("output path: " + path2)
 
