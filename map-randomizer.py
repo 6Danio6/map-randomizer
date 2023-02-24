@@ -8,8 +8,10 @@ randomtype = input("type (1 or 2): ")
 diff = input("diff: ")
 change = int(input("change how much?: "))
 
+diffchange = " - random=" + str(change) + " type=" + str(randomtype)
+
 path = glob.glob(('*'+diff+'*.osu'))[-1]
-path2 = path[:-5] + " | random: " + str(change) + " type: " + randomtype + "].osu"
+path2 = path[:-5] + diffchange + "].osu"
 print("input path: " + path)
 print("output path: " + path2)
 
@@ -23,7 +25,7 @@ i=0
 while (wiersze[i].find("Version:") == -1):
     i+=1
 
-wiersze[i] = wiersze[i][:-1] + " - randomized by " + str(change) + "\n"
+wiersze[i] = wiersze[i][:-1] + diffchange + "\n"
 
 # separate the hitobject rows
 while (wiersze[i].find("[HitObjects]") == -1):
