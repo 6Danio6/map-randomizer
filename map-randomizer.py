@@ -1,12 +1,12 @@
 # put this file in the desired song folder and run it
-# type 1 - change the x and y values by a random number
-# type 2 - move at a random angle by the given distance (not sure if it works)
+# type 1 - change the x and y values of each circle by a random number
+# type 2 - move each circle at a random angle by the given distance
 
 import glob, random, math
 
 randomtype = input("type (1 or 2): ")
-diff = input("diff: ")
-change = int(input("change how much?: "))
+diff = input("difficulty name: ")
+change = int(input("change amount (10 to 50 is recommended): "))
 
 diffchange = " - random=" + str(change) + " type=" + str(randomtype)
 
@@ -50,8 +50,9 @@ for wiersz in hitobjects:
         x += random.randint(-change,change)
         y += random.randint(-change,change)
     else:
-        x += math.cos( random.randint(0,359) ) * change
-        y += math.sin( random.randint(0,359) ) * change
+        angle = math.radians( random.randint(0,359) )
+        x += math.cos(angle) * change
+        y += math.sin(angle) * change
 
     nowywiersz = str(x) + "," + str(y) + wiersz[comma2:]
     f2.write(nowywiersz)
