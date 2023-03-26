@@ -1,14 +1,14 @@
 # put this file in the desired song folder and run it
-# type 1 - change the x and y values of each circle by a random number
-# type 2 - move each circle at a random angle by the given distance
+# method 1 - change the x and y values of each circle by a random number
+# method 2 - move each circle at a random angle by the given distance
 
 import glob, random, math
 
-randomtype = input("type (1 or 2): ")
+method = input("method (1 or 2): ")
 diff = input("difficulty name: ")
 change = int(input("change amount (10 to 50 is recommended): "))
 
-diffchange = " - random=" + str(change) + " type=" + str(randomtype)
+diffchange = " - random=" + str(change) + " method=" + str(method)
 
 path = glob.glob(('*'+diff+'*.osu'))[-1]
 path2 = path[:-5] + diffchange + "].osu"
@@ -46,7 +46,7 @@ for wiersz in hitobjects:
     x = int(wiersz[0 : comma1])
     y = int(wiersz[comma1+1 : comma2])
 
-    if (randomtype == 1):
+    if (method == 1):
         x += random.randint(-change,change)
         y += random.randint(-change,change)
     else:
